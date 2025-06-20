@@ -5,6 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        "use strict"
+        // function 키워드로 함수를 정의.
+        function goBtn(address) {
+            // address는 변수명 - 함수 실행에 필요한 입력값을 저장
+            window.open('https://github.com', '_blank');
+        }
+        //bring a var 'Greeting' btn
+
+        /* addEventListener(   funtinon(name){       }       ) 구조는 이렇게 되어있다.
+        메소드 속 함수 또는 함수 속에 함수를 '콜백 함수'라고 부르며
+        오롯이 greet이 마우스 클릭할 때만 동작할 것이므로 해당 명령어를 받는 곳에 메소드를 집어넣었으니
+        function Alice('값')처럼 변수이름 선언을 할 필요가 없다.
+        */
+
+    </script>
 </head>
 
 <body>
@@ -23,7 +39,55 @@
     <!-- 필요에 의해 특정 이벤트에 대한 처리할 명령을 작성 -->
     <button type="button" onclick="alert('안녕하십니까')">1. Greet</button>
     <button onclick="location.href='https://github.com'">2. Go to github</button>
-    <button type="button" onclick="window.open('https://github.com','_blank')">github open new page</button>
+    <button type="button" onclick="window.open('https://github.com','_blank')">3.github open new page</button>
+    <button onclick="goBtn('')">4.NAVER</button>
+    <hr>
+        <button id="naver">http://www.naver.com</button>
+    <hr />
+    <input type="text" id="client" placeholder="인사할 고객의 이름을 기입하라.">
+    <!-- input에 입력한 내용은 Value속성에 저장됨. -->
+    <button id="greet">5.Greetings</button>
+    <hr>
+    <select id="front-opp">
+        <option value="www.">www.</option>
+        <option value="">none</option>
+    </select>
+    <input type="text" id="links" placeholder="가고싶은 사이트를 입력하라.">
+    <!-- input에 입력한 내용은 Value속성에 저장됨. -->
+    <select id="back-opp">
+        <option value=".com">.com</option>
+        <option value=".go.kr">.go.kr</option>
+        <option value=".co.kr">.co.kr</option>
+        <option value=".ac.kr">.ac.kr</option>
+        <option value=".net">.net</option>
+    </select>
+    <button id="go-to-site">Go!</button>
+
+    <script>
+        const naverBtn = document.getElementById('naver');
+        naverBtn.addEventListener(
+            'click',function(){
+                window.open(naverBtn.textContent,'_blank');
+            }
+        );
+        const greet = document.getElementById('greet');
+        greet.addEventListener(
+            'click', function () {
+                const client = document.getElementById('client').value
+                alert('hello ' + client)
+            }
+        );
+        const URL = document.getElementById('go-to-site');
+        URL.addEventListener(
+            'click', function () {
+                const sitef = document.getElementById('front-opp').value;
+                const siteb = document.getElementById('back-opp').value;
+                const links = document.getElementById('links').value
+                window.open('https://' + sitef + links + siteb, '_blank');
+            }
+
+        )
+    </script>
 </body>
 
 </html>
