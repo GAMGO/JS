@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>사용자가 일으키는 동작</p>
+    <ul>
+        <li>button click</li>
+        <li>Keyboard Input</li>
+        <li>Mouse Click/Hover/Drag&Drop/movement</li>
+    </ul>
+    <ol>
+        <p>이벤트 처리하는 방법</p>
+        <li>onclick 속성에 직접 js명령어 작성</li>
+        <li>onclick 속성에 직접 js명령어 실행</li>
+        <li>onclick 속성 사용하지 않고 addEventListener() 메소드 사용</li>
+    </ol>
+    <!-- 필요에 의해 특정 이벤트에 대한 처리할 명령을 작성 -->
+    <button type="button" onclick="alert('안녕하십니까')">1. Greet</button>
+    <button onclick="location.href='https://github.com'">2. Go to github</button>
+    <button type="button" onclick="window.open('https://github.com','_blank')">github open new page</button>
+</body>
+
+</html>
